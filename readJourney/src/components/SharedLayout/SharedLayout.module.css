@@ -1,3 +1,11 @@
+.sharedLayout {
+  min-height: 100vh;
+  background-color: #141414;
+  color: #f9f9f9;
+  font-family: sans-serif;
+  padding: 20px 40px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -8,6 +16,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 
 .logo {
@@ -22,7 +31,7 @@
 
 .userNav {
   display: flex;
-  gap: 40px; /* Linkler arası boşluğu artırdık */
+  gap: 40px;
   align-items: center;
 }
 
@@ -94,4 +103,106 @@
 .logoutBtn:hover {
   background-color: #f9f9f9;
   color: #141414;
+}
+
+.mobileHeaderControls {
+  display: none;
+}
+
+.mainContent {
+  margin-top: 30px;
+}
+
+/* --- MOBİL VE TABLET UYUMLULUK (RESPONSIVE) --- */
+
+@media screen and (max-width: 768px) {
+  .sharedLayout {
+    padding: 10px 16px;
+  }
+
+  .userNav,
+  .userBarContainer {
+    display: none; /* Mobilde masaüstü öğelerini gizle */
+  }
+
+  .mobileHeaderControls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hamburgerBtn {
+    background: transparent;
+    border: none;
+    color: #f9f9f9;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Mobil Menü Overlay (Drawer) */
+  .mobileMenuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mobileMenuContent {
+    width: 250px;
+    height: 100%;
+    background-color: #1f1f1f;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #f9f9f9;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .mobileNav a {
+    text-decoration: none;
+    color: #686868;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+
+  .mobileNav a.active {
+    color: #f9f9f9;
+    font-weight: bold;
+  }
+
+  .mobileLogoutBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f9f9f9;
+    padding: 10px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+  }
 }

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
@@ -6,8 +7,8 @@ import styles from "./SharedLayout.module.css";
 
 export default function SharedLayout() {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // LocalStorage'dan giriş yapan kullanıcının adını alalım (Yoksa varsayılan gösterelim)
   const userName = localStorage.getItem("userName") || "User";
   const userInitial = userName.charAt(0).toUpperCase();
 
@@ -27,6 +28,9 @@ export default function SharedLayout() {
     }
   };
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <div className={styles.sharedLayout}>
       <header className={styles.header}>
@@ -34,6 +38,7 @@ export default function SharedLayout() {
           <span className={styles.logoIcon}>📖</span> READ JOURNEY
         </div>
 
+        {/* Masaüstü Navigasyonu */}
         <nav className={styles.userNav}>
           <NavLink to="/recommended" className={({ isActive }) => (isActive ? styles.active : "")}>
             Home
@@ -43,6 +48,7 @@ export default function SharedLayout() {
           </NavLink>
         </nav>
 
+        {/* Masaüstü Sağ Alan (UserBar + Logout) */}
         <div className={styles.userBarContainer}>
           <div className={styles.userBar}>
             <span className={styles.userAvatar}>{userInitial}</span>
@@ -52,7 +58,37 @@ export default function SharedLayout() {
             Log out
           </button>
         </div>
+
+        {/* Mobil Hamburger Butonu ve Avatar */}
+        <div className={styles.mobileHeaderControls}>
+          <div className={styles.userAvatar}>{userInitial}</div>
+          <button onClick={toggleMenu} className={styles.hamburgerBtn} aria-label="Open menu">
+            ☰
+          </button>
+        </div>
       </header>
+
+      {/* Mobil Menü / Drawer */}
+      {isMenuOpen && (
+        <div className={styles.mobileMenuOverlay} onClick={closeMenu}>
+          <div className={styles.mobileMenuContent} onClick={(e) => e.stopPropagation()}>
+            <button onClick={closeMenu} className={styles.closeBtn}>
+              ✕
+            </button>
+            <nav className={styles.mobileNav}>
+              <NavLink to="/recommended" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
+                Home
+              </NavLink>
+              <NavLink to="/library" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
+                My library
+              </NavLink>
+            </nav>
+            <button onClick={handleLogout} className={styles.mobileLogoutBtn}>
+              Log out
+            </button>
+          </div>
+        </div>
+      )}
 
       <main className={styles.mainContent}>
         <Outlet />
