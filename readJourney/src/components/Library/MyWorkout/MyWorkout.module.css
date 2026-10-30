@@ -1,0 +1,72 @@
+.workoutCard {
+  background-color: #1f1f1f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.workoutTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin: 0;
+}
+
+.workoutForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 12px;
+  color: #686868;
+}
+
+.selectField {
+  background-color: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #f9f9f9;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.stepInfo {
+  font-size: 14px;
+  color: #f9f9f9;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.startBtn {
+  background-color: #f9f9f9;
+  color: #141414;
+  border: none;
+  border-radius: 30px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+
+.startBtn:hover {
+  opacity: 0.9;
+}

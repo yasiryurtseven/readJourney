@@ -1,0 +1,278 @@
+.recommendedPage {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sol Sütun (1024px ve 1440px'de sol tarafta sabit kalır) */
+.leftSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 320px; /* 1024px ekranda sığması için ideal genişlik */
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Sağ Sütun / Ana İçerik */
+.mainContentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Kartların Ortak Tasarımı */
+.filtersCard,
+.workoutCard,
+.quoteCard,
+.booksSection {
+  background-color: #1f1f1f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 32px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  color: #f9f9f9;
+  font-weight: 500;
+  margin: 0;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.filterGroup label {
+  font-size: 12px;
+  color: #686868;
+}
+
+.filterInput {
+  background-color: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #f9f9f9;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.applyBtn {
+  background-color: #f9f9f9;
+  color: #141414;
+  border: none;
+  border-radius: 30px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Workout Paneli */
+.workoutTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin: 0;
+}
+
+.workoutSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.workoutStep {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stepNumber {
+  background-color: #f9f9f9;
+  color: #141414;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.workoutStep p {
+  margin: 0;
+  font-size: 14px;
+  color: #686868;
+  line-height: 1.4;
+}
+
+.workoutLink {
+  color: #f9f9f9;
+  text-decoration: underline;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 16px;
+}
+
+/* Alıntı Kartı */
+.quoteCard {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.quoteIcon {
+  font-size: 24px;
+  background-color: #141414;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quoteText {
+  font-size: 14px;
+  color: #686868;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Kitaplar Bölümü */
+.booksHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.booksTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin: 0;
+}
+
+.paginationButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.pageBtn {
+  background-color: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f9f9f9;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  /* max-height ve overflow-y özellikleri kaldırıldı, ok tuşlarıyla sayfalama yapılıyor */
+}
+
+.bookCard {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.coverWrapper {
+  width: 100%;
+  height: 180px;
+  background-color: #141414;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bookCover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bookName {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookAuthor {
+  font-size: 12px;
+  color: #686868;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.loadingText {
+  color: #f9f9f9;
+  text-align: center;
+  padding: 40px;
+}
+
+/* --- SADECE MOBİLDE (768px ve altı) DİKEY AKIŞA GEÇER --- */
+@media screen and (max-width: 768px) {
+  .recommendedPage {
+    flex-direction: column;
+  }
+
+  .leftSidebar {
+    width: 100%;
+  }
+
+  .quoteCard {
+    display: none;
+  }
+
+  .booksGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .filtersCard,
+  .workoutCard,
+  .booksSection {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}

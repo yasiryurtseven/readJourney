@@ -4,6 +4,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PublicRoute from "./components/PublicRoute/PublicRoute";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
+import RecommendedPage from "./components/RecommendedPage/RecommendedPage";
+import LibraryPage from "./pages/LibraryPage/LibraryPage";
 
 function App() {
   return (
@@ -37,8 +39,8 @@ function App() {
             </PrivateRoute>
           }
         >
-          <Route path="/recommended" element={<h1>Recommended Page (Önerilenler)</h1>} />
-          <Route path="/library" element={<h1>My Library Page (Kütüphanem)</h1>} />
+          <Route path="/recommended" element={<RecommendedPage />} />
+          <Route path="/library" element={<LibraryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

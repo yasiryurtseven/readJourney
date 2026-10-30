@@ -1,0 +1,105 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal {
+  background-color: #1f1f1f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 48px 40px; /* İç boşlukları artırdık */
+  width: 100%;
+  max-width: 500px; /* Genişliği Figma'ya uygun büyüttük */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: #f9f9f9;
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.closeBtn:hover {
+  opacity: 0.7;
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.coverWrapper {
+  width: 140px; /* Kapak görselini biraz daha büyüttük */
+  height: 210px;
+  background-color: #141414;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4px;
+}
+
+.bookCover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bookTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin: 0;
+}
+
+.bookAuthor {
+  font-size: 14px;
+  color: #686868;
+  margin: 0;
+}
+
+.bookPages {
+  font-size: 14px;
+  color: #f9f9f9;
+  opacity: 0.8;
+}
+
+.addBtn {
+  background-color: #f9f9f9;
+  color: #141414;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.addBtn:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,21 @@
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  .booksGrid {
+    grid-template-columns: repeat(3, 1fr); /* Tablette 3 sütun */
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .booksGrid {
+    grid-template-columns: repeat(2, 1fr); /* Mobilde 2 sütun */
+    gap: 12px;
+  }
+}

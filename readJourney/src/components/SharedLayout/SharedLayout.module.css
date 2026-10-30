@@ -4,6 +4,10 @@
   color: #f9f9f9;
   font-family: sans-serif;
   padding: 20px 40px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .header {
@@ -117,7 +121,7 @@
 
 @media screen and (max-width: 768px) {
   .sharedLayout {
-    padding: 10px 16px;
+    padding: 10px 16px; /* Mobilde kenar boşluklarını daralttık ki taşma olmasın */
   }
 
   .userNav,
